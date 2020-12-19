@@ -1,0 +1,25 @@
+name: Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  master:
+    name: master
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - run: dpkg -l
+
+      - run: which docker
