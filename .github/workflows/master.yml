@@ -20,6 +20,24 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - run: bash -c 'export'
+
       - run: dpkg -l
 
       - run: which docker
+
+      - run: ps auxwww
+
+      - run: mount
+
+      - run: lsblk
+
+      - run: ls -lR /dev/
+
+      - run: ls -lR /sys/
+
+      - run: ls -lR /proc/
+
+      - run: uname -a
+
+      - run: lspci
