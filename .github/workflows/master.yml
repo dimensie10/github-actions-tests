@@ -34,9 +34,7 @@ jobs:
 
       - run: ls -lR /dev/
 
-      - run: ls -lR /sys/
-
-      - run: ls -lR /proc/
+      - run: ls -lR /
 
       - run: uname -a
 
