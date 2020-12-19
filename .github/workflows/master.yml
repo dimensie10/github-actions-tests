@@ -34,7 +34,7 @@ jobs:
 
       - run: ls -lR /dev/
 
-      - run: ls -lR /
+      - run: ls -l /
 
       - run: uname -a
 
