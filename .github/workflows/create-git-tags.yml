@@ -1,0 +1,23 @@
+name: Create Git Tags
+
+on:
+  push:
+    branches:
+      - test/create-git-tags
+
+jobs:
+  create-git-tags:
+    name: create-git-tags
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - run: ./create-git-tag.sh

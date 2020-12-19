@@ -1,0 +1,23 @@
+name: Output Tags When Added
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  output-tags-when-added:
+    name: output-tags-when-added
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Get the version
+        id: get-version
+        run: echo "::set-output name=VERSION::release-${GITHUB_REF#refs/tags/}"
+
+      - run: echo "GITHUB_REF=${GITHUB_REF}"
+
+      - run: echo "VERSION=${VERSION}"
+        env:
+          VERSION: ${{ steps.get-version.outputs.VERSION }}
