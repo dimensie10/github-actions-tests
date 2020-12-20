@@ -41,3 +41,7 @@ jobs:
       - run: lspci
 
       - run: date --help
+
+      - run: date +"%Y%m%d%H%M%S.%N"
+
+      - run: date +"%s.%N"
