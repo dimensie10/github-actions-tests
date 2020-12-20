@@ -39,3 +39,5 @@ jobs:
       - run: uname -a
 
       - run: lspci
+
+      - run: date --help
